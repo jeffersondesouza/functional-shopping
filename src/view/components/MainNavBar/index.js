@@ -11,15 +11,18 @@ const MainNavBar = () => {
           <Link to="/" className="brand-logo">
             Logo
           </Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <ul  className="right hide-on-med-and-down">
             <li>
-              <a href="sass.html">Sass</a>
+              <Link to="/signup">signup</Link>
             </li>
             <li>
-              <a href="badges.html">Components</a>
+              <Link to="/products">products</Link>
             </li>
             <li>
-              <a href="collapsible.html">JavaScript</a>
+              <Link to="/products/1">products id</Link>
+            </li>
+            <li>
+              <Link to="/add">add</Link>
             </li>
           </ul>
         </div>

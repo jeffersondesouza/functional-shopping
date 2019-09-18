@@ -15,16 +15,15 @@ function App() {
   return (
     <div className="App">
       <MainNavBar />
-      <div className="container">
-        <Switch>
-          <Route exact to="/" component={Login} />
-          <Route exact to="/signup" component={SignUp} />
-          <Route exact to="/products" component={Orders} />
-          <Route exact to="/add-products" component={AddProduct} />
-          <Route exact to="/products/:id" component={ProductDetails} />
-          <Route exact to="/orders" component={Products} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact to="/" component={Login} />
+        <Route to="/signup" component={SignUp} />
+        <Route to="/products" component={Orders} />
+        <Route to="/add-products" component={AddProduct} />
+        <Route to="/products/:id" component={ProductDetails} />
+        <Route to="/orders" component={Products} />
+        <Route to="*" component={Login} />
+      </Switch>
     </div>
   );
 }
