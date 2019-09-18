@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       <MainNavBar />
       <Switch>
-        <Route exact to="/" component={Login} />
-        <Route to="/signup" component={SignUp} />
-        <Route to="/products" component={Orders} />
-        <Route to="/add-products" component={AddProduct} />
-        <Route to="/products/:id" component={ProductDetails} />
-        <Route to="/orders" component={Products} />
-        <Route to="*" component={Login} />
+        <Route exact path="/" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/products" component={Orders} />
+        <Route path="/add-products" component={AddProduct} />
+        <Route path="/products/:id" component={ProductDetails} />
+        <Route path="/orders" component={Products} />
+        <Route path="*" component={Login} />
       </Switch>
     </div>
   );
