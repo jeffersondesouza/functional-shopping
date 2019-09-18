@@ -7,7 +7,7 @@ const MainNavBar = ({ isLoggedIn }) => {
   return (
     <header>
       <nav>
-        <div className="nav-wrapper deep-purple lighten-1 MainNavBar">
+        <div className="nav-wrapper deep-purple MainNavBar">
           <Link to="/products" className="brand-logo">
             Functional Shopping
           </Link>
