@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
 const MainNavBar = () => {
   return (
-    <header >
+    <header>
       <nav className="offset-s1">
         <div className="nav-wrapper deep-purple lighten-1 MainNavBar">
-          <a href="#" class="brand-logo">
+          <Link to="/" className="brand-logo">
             Logo
-          </a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          </Link>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
               <a href="sass.html">Sass</a>
             </li>
