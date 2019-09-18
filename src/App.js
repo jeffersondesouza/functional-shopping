@@ -15,15 +15,17 @@ function App() {
   return (
     <div className="App">
       <MainNavBar />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/products" component={Orders} />
-        <Route path="/add-products" component={AddProduct} />
-        <Route path="/products/:id" component={ProductDetails} />
-        <Route path="/orders" component={Products} />
-        <Route path="*" component={Login} />
-      </Switch>
+      <div className="container App__container">
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/products" component={Products} />
+          <Route path="/add-products" component={AddProduct} />
+          <Route path="/products/:id" component={ProductDetails} />
+          <Route path="/orders" component={Orders} />
+          <Route path="*" component={Login} />
+        </Switch>
+      </div>
     </div>
   );
 }

@@ -3,27 +3,40 @@ import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
-const MainNavBar = () => {
+const MainNavBar = ({ isLoggedIn }) => {
   return (
     <header>
-      <nav className="offset-s1">
+      <nav>
         <div className="nav-wrapper deep-purple lighten-1 MainNavBar">
-          <Link to="/" className="brand-logo">
-            Logo
+          <Link to="/products" className="brand-logo">
+            Functional Shopping
           </Link>
-          <ul  className="right hide-on-med-and-down">
+          <ul className="right hide-on-med-and-down">
             <li>
-              <Link to="/signup">signup</Link>
+              <Link to="/products">Products</Link>
             </li>
-            <li>
-              <Link to="/products">products</Link>
-            </li>
-            <li>
-              <Link to="/products/1">products id</Link>
-            </li>
-            <li>
-              <Link to="/add">add</Link>
-            </li>
+            {isLoggedIn ? (
+              <>
+                <li>
+                  <Link to="/add">Create Product</Link>
+                </li>
+                <li>
+                  <Link to="/orders">My Orders</Link>
+                </li>
+                <li>
+                  <Link to="/login">Logout</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/signup">Sign Up</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>
