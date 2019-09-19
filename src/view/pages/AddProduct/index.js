@@ -19,7 +19,7 @@ const AddProduct = () => {
 
         <div className="row">
           <div className="file-field input-field">
-            <div className="btn">
+            <div className="btn deep-purple">
               <span>Image</span>
               <input type="file" multiple />
             </div>
@@ -35,7 +35,7 @@ const AddProduct = () => {
         <div className="row">
           <div className="input-field col s12 offset-m3">
             <button
-              className="btn waves-effect waves-light deep-purple"
+              className="btn green darken-1 waves-effect waves-light"
               type="submit"
             >
               Create Product

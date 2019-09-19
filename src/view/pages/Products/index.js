@@ -13,7 +13,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -27,7 +27,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -41,7 +41,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -55,7 +55,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -69,7 +69,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -83,7 +83,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -97,7 +97,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -111,7 +111,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -125,7 +125,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -139,7 +139,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -153,7 +153,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>
@@ -167,7 +167,7 @@ const Products = () => {
         <div className="card">
           <div className="card-image">
             <img src={imgLink} alt="" />
-            <button className="btn-floating halfway-fab waves-effect waves-light red">
+            <button className="btn-floating halfway-fab waves-effect waves-light deep-purple">
               <i className="material-icons">add</i>
             </button>
           </div>

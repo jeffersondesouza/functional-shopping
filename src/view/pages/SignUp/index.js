@@ -27,7 +27,7 @@ const SignUp = () => {
         <div className="row">
           <div className="input-field col s12">
             <button
-              className="btn waves-effect waves-light deep-purple"
+              className="btn waves-effect waves-light green darken-1"
               type="submit"
             >
               Create Account

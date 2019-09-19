@@ -1,0 +1,11 @@
+.OrdersItem {
+  display: flex;
+
+  &__summary {
+    flex: 1;
+  }
+
+  &__buy {
+    margin-right: 1rem;
+  }
+}
