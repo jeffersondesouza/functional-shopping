@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./styles.scss";
 
@@ -13,27 +13,27 @@ const MainNavBar = ({ isLoggedIn }) => {
           </Link>
           <ul className="right hide-on-med-and-down">
             <li>
-              <Link to="/products">Products</Link>
+              <NavLink  activeClassName="active-link" to="/products">Products</NavLink>
             </li>
             {isLoggedIn ? (
               <>
                 <li>
-                  <Link to="/create-product">Create Product</Link>
+                  <NavLink activeClassName="active-link" to="/create-product">Create Product</NavLink>
                 </li>
                 <li>
-                  <Link to="/orders">My Orders</Link>
+                  <NavLink activeClassName="active-link" to="/orders">My Orders</NavLink>
                 </li>
                 <li>
-                  <Link to="/login">Logout</Link>
+                  <NavLink activeClassName="active-link" to="/login">Logout</NavLink>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <NavLink activeClassName="active-link" to="/login">Login</NavLink>
                 </li>
                 <li>
-                  <Link to="/signup">Sign Up</Link>
+                  <NavLink activeClassName="active-link" to="/signup">Sign Up</NavLink>
                 </li>
               </>
             )}

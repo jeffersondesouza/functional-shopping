@@ -3,6 +3,9 @@ import React from "react";
 const AddProduct = () => {
   return (
     <div className="row">
+      <header>
+        <h5>Create Product</h5>
+      </header>
       <form className="col s12 m6 offset-m3">
         <div className="row">
           <div className="input-field col s12">
