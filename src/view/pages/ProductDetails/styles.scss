@@ -1,0 +1,46 @@
+@mixin middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ProductDetails {
+
+  &__description {
+    margin-bottom: 3rem
+  }
+}
+
+.ChartForm {
+
+  &__content {
+    @include middle;
+
+    input {
+      text-align: center;
+      border: 1px solid #9e9e9e
+    }
+  }
+
+  &__quantity {
+    flex: 1;
+  }
+
+  &__buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn-floating:first-child {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__action {
+    @include middle;
+    flex: 3;
+  }
+}

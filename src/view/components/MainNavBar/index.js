@@ -18,7 +18,7 @@ const MainNavBar = ({ isLoggedIn }) => {
             {isLoggedIn ? (
               <>
                 <li>
-                  <Link to="/add">Create Product</Link>
+                  <Link to="/create-product">Create Product</Link>
                 </li>
                 <li>
                   <Link to="/orders">My Orders</Link>

@@ -14,16 +14,16 @@ import {
 function App() {
   return (
     <div className="App">
-      <MainNavBar />
+      <MainNavBar isLoggedIn />
       <div className="container App__container">
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/products/:id" component={ProductDetails} />
-          <Route exact path="/add-products" component={AddProduct} />
+          <Route exact path="/create-product" component={AddProduct} />
           <Route exact path="/orders" component={Orders} />
-          <Route path="*" component={Login} />
+          <Route path="*" component={Products} />
         </Switch>
       </div>
     </div>
