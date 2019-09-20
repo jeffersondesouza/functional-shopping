@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import beersReducer from "./modules/beers/reducer";
+import productReducer from "./modules/product/reducer";
 
 const appReducer = combineReducers({
-  beers: beersReducer
+  product: productReducer
 });
 
 const rootReducer = (state, action) => {
