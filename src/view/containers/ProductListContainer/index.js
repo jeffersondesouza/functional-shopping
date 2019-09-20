@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { ProductList } from "../../components";
 
 import actions from "./../../../store/rootActions";
+import selectProductList from "../../../store/selectors/selectProductList";
 
 const ProductListContainer = props => {
-  const { dispatchLoadProducts } = props;
+  const {products, dispatchLoadProducts } = props;
 
   useEffect(() => {
     dispatchLoadProducts();
@@ -13,12 +14,12 @@ const ProductListContainer = props => {
 
   return (
     <>
-      <ProductList />
+      <ProductList products={products} />
     </>
   );
 };
 
-const mapStateToProps = state => ({ ...state });
+const mapStateToProps = state => ({ products: selectProductList(state) });
 
 const mapDispatchToProps = dispatch => ({
   dispatchLoadProducts: () => dispatch(actions.product.loadProductRequest())

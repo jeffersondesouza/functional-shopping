@@ -1,9 +1,13 @@
 import Types from "./actionTypes";
 
-const loadProductRequest = reloadMode => ({
-  type: Types.LOAD_PRODUCTS_REQUEST,
-  payload: reloadMode,
+const updateProducts = products => ({
+  type: Types.UPDATE_PRODUCTS,
+  payload: products,
   meta: {}
+});
+
+const loadProductRequest = () => ({
+  type: Types.LOAD_PRODUCTS_REQUEST
 });
 
 const loadProductSuccess = payload => ({
@@ -19,5 +23,6 @@ const loadProductFailure = error => ({
 export default {
   loadProductRequest,
   loadProductSuccess,
-  loadProductFailure
+  loadProductFailure,
+  updateProducts
 };

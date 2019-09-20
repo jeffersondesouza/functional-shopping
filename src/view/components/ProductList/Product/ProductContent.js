@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductContent = () => (
+const ProductContent = ({ name, id }) => (
   <div className="card-content">
-    <span className="card-title">Card Title</span>
-    <Link to={`/products/${1}`}>More Details</Link>
+    <span className="card-title">{name}</span>
+    <Link to={`/products/${id}`}>More Details</Link>
   </div>
 );
 

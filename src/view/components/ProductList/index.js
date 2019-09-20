@@ -1,20 +1,13 @@
 import React from "react";
 import Product from "./Product";
 
-const ProductList = () => (
+const ProductList = ({ products }) => (
   <ul className="row">
-    <li className="col s12 m4">
-      <Product />
-    </li>
-    <li className="col s12 m4">
-      <Product />
-    </li>
-    <li className="col s12 m4">
-      <Product />
-    </li>
-    <li className="col s12 m4">
-      <Product />
-    </li>
+    {products.map(item => (
+      <li key={item.id} className="col s12 m4">
+        <Product {...item}/>
+      </li>
+    ))}
   </ul>
 );
 

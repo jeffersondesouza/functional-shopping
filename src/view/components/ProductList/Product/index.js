@@ -6,13 +6,15 @@ import ProductContent from "./ProductContent";
 const imgLink =
   "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRFAuJKZMsVve-JO1mZcuEQ72D-X5e2DPjiNhcvcdlYXKc8nE5h-oc&usqp=CAc";
 
-const Product = () => {
+const Product = props => {
+  const { id, name, productImage } = props;
+
   return (
     <div className="card">
       <ProductImage imgLink={imgLink}>
-        <ProductAction />
+        <ProductAction id={id} />
       </ProductImage>
-      <ProductContent />
+      <ProductContent name={name} id={id} />
     </div>
   );
 };

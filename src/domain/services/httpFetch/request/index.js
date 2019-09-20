@@ -1,9 +1,17 @@
+//  @flow
 import axios from "axios";
 
 import type { HttpResponse } from "./../../../types/HttpResponse";
+import type { HttpRequest } from "./../../../types/HttpRequest";
+
 import parseHttpResponse from "./parseHttpResponse";
 
-const request = (requestOptions, customMapperFn): HttpResponse =>
-  axios(requestOptions).then(parseHttpResponse);
+type RequestType = HttpRequest | (() => HttpRequest);
 
+const request = (requestOptions: RequestType): HttpResponse => {
+  if (typeof requestOptions === "function") {
+    return axios(requestOptions()).then(parseHttpResponse);
+  }
+  return axios(requestOptions).then(parseHttpResponse);
+};
 export default request;
