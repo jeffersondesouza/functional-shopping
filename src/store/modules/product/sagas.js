@@ -1,10 +1,19 @@
-//  @flow
-import { takeEvery, put, all, select, call } from "redux-saga/effects";
+import { takeEvery, put, all, call } from "redux-saga/effects";
 
 import actions from "./actions";
 import actionTypes from "./actionTypes";
+import httpFetch from "../../../domain/services/httpFetch";
+import productListFactory from "../../../domain/factories/productListFactory";
 
 function* loadProductsEffect({ payload }) {
+  const { data } = yield call(httpFetch.request, {
+    method: "GET",
+    url: "http://localhost:3001/products"
+  });
+
+  const products = productListFactory(data);
+  console.log("products:", products);
+
   yield put(actions.loadProductSuccess());
 }
 
