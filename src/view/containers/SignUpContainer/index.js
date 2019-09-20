@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { ProductList } from "../../components";
 
-import actions from "./../../../store/rootActions";
+import actions from "../../../store/rootActions";
 
-const ProductListContainer = props => {
+const SignUpContainer = props => {
   return (
     <>
       <ProductList />
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductListContainer);
+)(SignUpContainer);

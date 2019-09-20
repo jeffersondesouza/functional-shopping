@@ -4,7 +4,7 @@ import { ProductList } from "../../components";
 
 import actions from "./../../../store/rootActions";
 
-const ProductListContainer = props => {
+const LoginContainer = props => {
   return (
     <>
       <ProductList />
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductListContainer);
+)(LoginContainer);
