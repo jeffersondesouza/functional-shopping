@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ProductList } from "../../components";
+import { SignUpForm } from "../../components";
 
 import actions from "../../../store/rootActions";
 
 const SignUpContainer = props => {
   return (
     <>
-      <ProductList />
+      <SignUpForm />
     </>
   );
 };
