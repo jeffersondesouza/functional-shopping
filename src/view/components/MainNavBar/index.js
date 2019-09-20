@@ -21,6 +21,21 @@ const MainNavBar = ({ isLoggedIn }) => {
                 Products
               </NavLink>
             </li>
+            <li>
+                  <NavLink activeClassName="active-link" to="/create-product">
+                    Create Product
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink activeClassName="active-link" to="/orders">
+                    My Orders
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink activeClassName="active-link" to="/login">
+                    Logout
+                  </NavLink>
+                </li>
             {isLoggedIn ? (
               <>
                 <li>
