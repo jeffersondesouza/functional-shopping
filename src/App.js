@@ -16,7 +16,7 @@ const token =
   "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW8xQGVtYWlsLmNvbSIsInVzZXJJZCI6IjVkODIzYzRlMjA3NjVjMWI0MzE1OWFlNiIsImlhdCI6MTU2ODg1NDAyMSwiZXhwIjoxNTY4ODU3NjIxfQ.C-MZvrGOntbdxmV2pfQWXF-6F5krL-6bFSpOQW6vnPc";
 
 const App = () => {
-  useEffect(() => {/* 
+  useEffect(() => {
     const productsConfig = {
       method: "get",
       url: "http://localhost:3001/products"
@@ -34,7 +34,7 @@ const App = () => {
 
     axios(ordersConfig)
       .then(res => res.data)
-      .then(res => console.log("res:", res)); */
+      .then(res => console.log("res:", res));
   }, []);
 
   return (

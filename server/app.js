@@ -11,7 +11,7 @@ const ordersRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 
 mongoose.connect(
-    `mongodb://duppoe:${process.env.MONGO_ATLAS_PASSWORD}@node-academind-tutorial-shard-00-00-giujg.mongodb.net:27017,node-academind-tutorial-shard-00-01-giujg.mongodb.net:27017,node-academind-tutorial-shard-00-02-giujg.mongodb.net:27017/test?ssl=true&replicaSet=node-academind-tutorial-shard-0&authSource=admin&retryWrites=true`,
+    `mongodb://${process.env.MONGO_ATLAS_DB}:${process.env.MONGO_ATLAS_PASSWORD}@node-academind-tutorial-shard-00-00-giujg.mongodb.net:27017,node-academind-tutorial-shard-00-01-giujg.mongodb.net:27017,node-academind-tutorial-shard-00-02-giujg.mongodb.net:27017/test?ssl=true&replicaSet=node-academind-tutorial-shard-0&authSource=admin&retryWrites=true`,
 );
 
 
