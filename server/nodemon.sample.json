@@ -1,0 +1,7 @@
+{
+    "disclaimer":"rename that file to nodemon.json and set your Atlas key",
+    "env": {
+        "MONGO_ATLAS_PASSWORD": "MONGO_ATLAS_PASSWORD",
+        "JWT_KEY": "secret"
+    }
+}
