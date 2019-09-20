@@ -8,10 +8,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 import configureStore from "./store";
-import packageJson from '../package.json';
-
-global.appVersion = packageJson.version;
-console.log('packageJson.version:', packageJson.version)
 
 const store = configureStore();
 
