@@ -1,25 +1,28 @@
 import INITIAL_STATE from "../state";
 
-import Types from "../actionTypes";
+import Type from "../actionTypes";
 import updateProducts from "./functions/updateProducts";
+import updateProductsCounter from "./functions/updateProductsCounter";
+import loadProductsRequest from "./functions/loadProductsRequest";
+import loadProductsSuccess from "./functions/loadProductsSuccess";
+import loadProductsFailure from "./functions/loadProductsFailure";
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case Types.UPDATE_PRODUCTS:
+    case Type.UPDATE_PRODUCTS:
       return updateProducts(state, action);
 
-    case Types.LOAD_PRODUCTS_REQUEST:
-      return { ...state, isLoadingProducts: true };
+    case Type.UPDATE_PRODUCTS_COUNTER:
+      return updateProductsCounter(state, action);
 
-    case Types.LOAD_PRODUCTS_SUCCESS:
-      return { ...state, isLoadingProducts: false };
+    case Type.LOAD_PRODUCTS_REQUEST:
+      return loadProductsRequest(state, action);
 
-    case Types.LOAD_PRODUCT_FAILURE:
-      return {
-        ...state,
-        isLoadingProducts: false,
-        error: action.payload.error
-      };
+    case Type.LOAD_PRODUCTS_SUCCESS:
+      return loadProductsSuccess(state, action);
+
+    case Type.LOAD_PRODUCT_FAILURE:
+      return loadProductsFailure(state, action);
 
     default:
       return state;

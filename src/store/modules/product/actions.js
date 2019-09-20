@@ -6,6 +6,11 @@ const updateProducts = products => ({
   meta: {}
 });
 
+const updateProductsCounter = total => ({
+  type: Types.UPDATE_PRODUCTS_COUNTER,
+  payload: total
+});
+
 const loadProductRequest = () => ({
   type: Types.LOAD_PRODUCTS_REQUEST
 });
@@ -24,5 +29,6 @@ export default {
   loadProductRequest,
   loadProductSuccess,
   loadProductFailure,
-  updateProducts
+  updateProducts,
+  updateProductsCounter
 };
