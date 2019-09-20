@@ -7,10 +7,13 @@ const MainNavBar = ({ isLoggedIn }) => {
   return (
     <header>
       <nav>
-        <div className="nav-wrapper deep-purple MainNavBar">
+        <div className="nav-wrapper deep-purple MainNavBar__nav-wrapper">
           <Link to="/products" className="brand-logo">
-            <h1>Budega</h1>
-            <div>Funcional</div>
+            <h1 className="MainNavBar__title-wrap">
+              
+              <div className="MainNavBar__title">Budega</div>
+              <div className="MainNavBar__subtitle">Functional</div>
+            </h1>
           </Link>
           <ul className="right hide-on-med-and-down">
             <li>
