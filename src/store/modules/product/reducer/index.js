@@ -1,10 +1,7 @@
 import INITIAL_STATE from "../state";
-import Types from "../actionTypes";
 
-const updateProducts = (state, action) => ({
-  ...state,
-  productList: [...action.payload]
-});
+import Types from "../actionTypes";
+import updateProducts from "./functions/updateProducts";
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -12,13 +9,17 @@ const reducer = (state = INITIAL_STATE, action) => {
       return updateProducts(state, action);
 
     case Types.LOAD_PRODUCTS_REQUEST:
-      return state;
+      return { ...state, isLoadingProducts: true };
 
     case Types.LOAD_PRODUCTS_SUCCESS:
-      return state;
+      return { ...state, isLoadingProducts: false };
 
     case Types.LOAD_PRODUCT_FAILURE:
-      return state;
+      return {
+        ...state,
+        isLoadingProducts: false,
+        error: action.payload.error
+      };
 
     default:
       return state;

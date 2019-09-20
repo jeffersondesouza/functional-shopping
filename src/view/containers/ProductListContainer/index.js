@@ -4,9 +4,10 @@ import { ProductList } from "../../components";
 
 import actions from "./../../../store/rootActions";
 import selectProductList from "../../../store/selectors/selectProductList";
+import selectIsLoadingProduct from "../../../store/selectors/selectIsLoadingProduct";
 
 const ProductListContainer = props => {
-  const {products, dispatchLoadProducts } = props;
+  const { products, isLoadingProducts, dispatchLoadProducts } = props;
 
   useEffect(() => {
     dispatchLoadProducts();
@@ -14,12 +15,19 @@ const ProductListContainer = props => {
 
   return (
     <>
-      <ProductList products={products} />
+      {isLoadingProducts ? (
+        <div>isLoadingProducts...</div>
+      ) : (
+        <ProductList products={products} />
+      )}
     </>
   );
 };
 
-const mapStateToProps = state => ({ products: selectProductList(state) });
+const mapStateToProps = state => ({
+  products: selectProductList(state),
+  isLoadingProducts: selectIsLoadingProduct(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   dispatchLoadProducts: () => dispatch(actions.product.loadProductRequest())

@@ -14,7 +14,7 @@ function* loadProductsEffect({ payload }) {
   const products = productListFactory(data);
 
   yield put(actions.updateProducts(products));
-  // yield put(actions.loadProductSuccess());
+  yield put(actions.loadProductSuccess());
 }
 
 function* watchLoadProduct() {
