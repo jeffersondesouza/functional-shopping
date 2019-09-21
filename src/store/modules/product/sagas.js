@@ -9,9 +9,10 @@ import productListFactory from "../../../domain/factories/productListFactory";
 import { loadProductsQuery } from "../../../domain/repositories/productRepository";
 
 function* loadProductsEffect({ payload }) {
+  
   const { data } = yield call(httpFetch.request, loadProductsQuery);
 
-  const products = productListFactory(data);
+  const products = productListFactory(data.products);
 
   yield put(actions.updateProducts(products));
   yield put(actions.updateProductsCounter(data.count));
