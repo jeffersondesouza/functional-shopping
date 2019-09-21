@@ -5,17 +5,23 @@ import { takeEvery, put, all, call } from "redux-saga/effects";
 import actions from "./actions";
 import actionTypes from "./actionTypes";
 import httpFetch from "../../../domain/services/httpFetch";
-import productListFactory from "../../../domain/factories/productListFactory";
+import ProductFactory from "../../../domain/factories/ProductFactory";
 import { loadProductsQuery } from "../../../domain/repositories/ProductRepository";
+import pipe from "../../../utils/functions/pipe";
 
 function* loadProductsEffect({ payload }) {
   try {
     const { data } = yield call(httpFetch.request, loadProductsQuery);
 
-    const products = productListFactory(data.products);
+    yield put(
+      pipe(
+        ProductFactory.buildProducts,
+        actions.updateProducts
+      )(data.products)
+    );
 
-    yield put(actions.updateProducts(products));
     yield put(actions.updateProductsCounter(data.count));
+
     yield put(actions.loadProductSuccess());
   } catch (error) {
     yield put(

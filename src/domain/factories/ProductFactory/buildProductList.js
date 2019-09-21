@@ -1,7 +1,7 @@
 // @flow
 import type { Product } from "../../types/Product";
 import Maybe from "../../../utils/functors/Maybe";
-import productFactory from "../productFactory";
+import productFactory from "./buildProduct";
 
 const buildProductsList = products => products.map(productFactory);
 
