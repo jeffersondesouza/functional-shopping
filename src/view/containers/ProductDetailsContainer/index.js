@@ -7,19 +7,39 @@ import actions from "../../../store/rootActions";
 import selectIsLogged from "../../../store/selectors/selectIsLogged";
 
 const ProductDetailsContainer = props => {
-  const { isLoggedIn, login } = props;
+  const { isLoggedIn, login, addOrderSuccess } = props;
 
   const [modal, setModal] = useState(null);
-  const [order, setOrder] = useState({ id: null, quantity: 0 });
+  const [order, setOrder] = useState({});
 
   const { M } = { window };
 
   useEffect(() => {
     setModal(window.M.Modal.getInstance(document.getElementById("modal1")));
+    return () => {
+      setOrder({});
+    };
   }, [M]);
 
-  const handleAddToChart = () => {
-    // modal.open();
+  useEffect(() => {
+    if (isLoggedIn && order.id) {
+      console.log(order);
+    }
+
+    if (isLoggedIn && modal) {
+      modal.close();
+    }
+  }, [isLoggedIn, modal, order]);
+
+  useEffect(() => {
+    setOrder({});
+  }, [addOrderSuccess]);
+
+  const handleAddToChart = newOrder => {
+    setOrder(newOrder);
+    if (!isLoggedIn) {
+      modal.open();
+    }
   };
 
   const handleLogin = data => {

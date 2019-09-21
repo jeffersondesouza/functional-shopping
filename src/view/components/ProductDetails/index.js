@@ -16,6 +16,11 @@ const ProductDetails = props => {
     });
   }, [id]);
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    onAddToChart(order);
+  };
+
   const handlChangeQuantity = increment => () =>
     setOrder({
       ...order,
@@ -35,14 +40,8 @@ const ProductDetails = props => {
   };
   */
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onAddToChart();
-  };
-
   return (
     <div className="row">
-      {JSON.stringify(order)}
       <div className="col s12 m5">
         <img src={imgLink} alt="" className="responsive-img" />
       </div>
@@ -56,7 +55,7 @@ const ProductDetails = props => {
         <form action="#" className="ChartForm">
           <div className="ChartForm__content">
             <div className="ChartForm__quantity">
-              <input />
+              <input value={order.quantity} readOnly />
             </div>
             <div className="ChartForm__buttons">
               <button
