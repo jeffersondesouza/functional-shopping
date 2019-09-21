@@ -23,9 +23,25 @@ const loginFailure = (payload: LoginError) => ({
   payload
 });
 
+const logoutRequest = () => ({
+  type: Types.LOGOUT_REQUEST
+});
+
+const logoutSuccess = () => ({
+  type: Types.LOGOUT_SUCCESS
+});
+
+const logoutFailure = (payload: LoginError) => ({
+  type: Types.LOGOUT_FAILURE,
+  payload
+});
+
 export default {
   updateUser,
   loginRequest,
   loginSuccess,
-  loginFailure
+  loginFailure,
+  logoutRequest,
+  logoutSuccess,
+  logoutFailure
 };

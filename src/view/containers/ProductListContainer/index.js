@@ -5,7 +5,7 @@ import { ProductList } from "../../components";
 import actions from "./../../../store/rootActions";
 import selectProductList from "../../../store/selectors/selectProductList";
 import selectIsLoadingProduct from "../../../store/selectors/selectIsLoadingProduct";
-import LoadingBlock from "../LoadingBlock";
+import { LoadingBlock } from "../../components";
 
 const ProductListContainer = props => {
   const { products, isLoadingProducts, dispatchLoadProducts } = props;

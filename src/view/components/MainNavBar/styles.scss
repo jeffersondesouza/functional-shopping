@@ -15,3 +15,25 @@
     margin-bottom: .75rem;
   }
 }
+
+
+.MainNavLinks {
+  &__item {
+    position: relative;
+  }
+
+  &__item-count {
+    align-items: center;
+    background: #fff;
+    border-radius: 100rem;
+    color: #000;
+    display: flex;
+    font-size: 12px;
+    height: 15px;
+    justify-content: center;
+    position: absolute;
+    right: 2px;
+    width: 15px;
+    top: 15px;
+  }
+}
