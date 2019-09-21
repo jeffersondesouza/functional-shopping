@@ -19,3 +19,4 @@
 
 ### utils
  - LoadingBlock.js
+ - naturalValue

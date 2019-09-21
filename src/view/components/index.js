@@ -5,3 +5,5 @@ export { default as LoadingBlock } from "./LoadingBlock";
 export { default as LoginForm } from "./LoginForm";
 export { default as MainNavBar } from "./MainNavBar";
 export { default as SignUpForm } from "./SignUpForm";
+export { default as Modal } from "./Modal";
+export { default as ProductDetails } from "./ProductDetails";
