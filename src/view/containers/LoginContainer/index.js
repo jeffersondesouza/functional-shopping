@@ -5,9 +5,13 @@ import { LoginForm } from "../../components";
 import actions from "./../../../store/rootActions";
 
 const LoginContainer = props => {
+  const handleLogin = data => {
+    console.log("data:", data);
+  };
+
   return (
     <>
-      <LoginForm />
+      <LoginForm onLogin={handleLogin} />
     </>
   );
 };
