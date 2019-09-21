@@ -36,6 +36,20 @@ const logoutFailure = (payload: LoginError) => ({
   payload
 });
 
+const signUpRequest = (payload: LoginRequest) => ({
+  type: Types.SIGN_UP_REQUEST,
+  payload
+});
+
+const signUpSuccess = () => ({
+  type: Types.SIGN_UP_SUCCESS
+});
+
+const signUpFailure = (payload: LoginError) => ({
+  type: Types.SIGN_UP_FAILURE,
+  payload
+});
+
 export default {
   updateUser,
   loginRequest,
@@ -43,5 +57,8 @@ export default {
   loginFailure,
   logoutRequest,
   logoutSuccess,
-  logoutFailure
+  logoutFailure,
+  signUpRequest,
+  signUpSuccess,
+  signUpFailure
 };

@@ -26,6 +26,7 @@ const SignUpForm = ({ onSignUp }) => {
           <input
             onChange={handleInputChange}
             id="email"
+            name="email"
             type="email"
             className="validate"
           />
@@ -37,6 +38,7 @@ const SignUpForm = ({ onSignUp }) => {
           <input
             onChange={handleInputChange}
             id="password"
+            name="password"
             type="password"
             className="validate"
           />
@@ -49,6 +51,7 @@ const SignUpForm = ({ onSignUp }) => {
           <input
             onChange={handleInputChange}
             id="confirmPassword"
+            name="confirmPassword"
             type="password"
             className="validate"
           />

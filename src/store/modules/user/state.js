@@ -3,5 +3,6 @@ export default {
   profile: { name: "", email: "" },
   auth: { token: "" },
   isLogged: false,
-  isLoggingIn: false
+  isLoggingIn: false,
+  isSigningUp: false
 };

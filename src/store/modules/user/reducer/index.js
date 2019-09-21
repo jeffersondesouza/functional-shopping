@@ -3,9 +3,14 @@ import INITIAL_STATE from "../state";
 import Type from "../actionTypes";
 
 import updateUser from "./functions/updateUser";
+
 import loginRequest from "./functions/loginRequest";
 import loginSuccess from "./functions/loginSuccess";
 import loginFailure from "./functions/loginFailure";
+
+import signUpRequest from "./functions/signUpRequest";
+import signUpSuccess from "./functions/signUpSuccess";
+import signUpFailure from "./functions/signUpFailure";
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -20,6 +25,15 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case Type.LOGIN_FAILURE:
       return loginFailure((state, action));
+
+    case Type.SIGN_UP_REQUEST:
+      return signUpRequest((state, action));
+
+    case Type.SIGN_UP_SUCCESS:
+      return signUpSuccess((state, action));
+
+    case Type.SIGN_UP_FAILURE:
+      return signUpFailure((state, action));
 
     default:
       return state;
