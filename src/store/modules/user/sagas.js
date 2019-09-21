@@ -4,6 +4,8 @@ import { takeEvery, put, all, call } from "redux-saga/effects";
 
 import actions from "./actions";
 import actionTypes from "./actionTypes";
+
+import pipe from "../../../utils/functions/pipe";
 import httpFetch from "../../../domain/services/httpFetch";
 import { loginQuery } from "../../../domain/repositories/UserRepository";
 import { buildUser } from "../../../domain/factories/UserFactory";
@@ -11,7 +13,13 @@ import { buildUser } from "../../../domain/factories/UserFactory";
 function* loginEffect({ payload }) {
   try {
     const { data } = yield call(httpFetch.request, loginQuery, payload);
-    const user = buildUser(data);
+   
+    yield put(
+      pipe(
+        buildUser,
+        actions.updateUser
+      )(data)
+    );
 
     yield put(actions.loginSuccess());
   } catch (error) {

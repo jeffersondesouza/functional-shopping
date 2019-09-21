@@ -2,8 +2,12 @@
 import Types from "./actionTypes";
 
 type LoginRequest = { email: string, password: string };
-type LoginError = { msg: string, hasError: boolean,data: any
-};
+type LoginError = { msg: string, hasError: boolean, data: any };
+
+const updateUser = (payload: any) => ({
+  type: Types.UPDATE_USER,
+  payload
+});
 
 const loginRequest = (payload: LoginRequest) => ({
   type: Types.LOGIN_REQUEST,
@@ -20,6 +24,7 @@ const loginFailure = (payload: LoginError) => ({
 });
 
 export default {
+  updateUser,
   loginRequest,
   loginSuccess,
   loginFailure
