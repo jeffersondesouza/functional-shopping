@@ -6,14 +6,23 @@ import actions from "./actions";
 import actionTypes from "./actionTypes";
 import httpFetch from "../../../domain/services/httpFetch";
 import { loginQuery } from "../../../domain/repositories/UserRepository";
+import { buildUser } from "../../../domain/factories/UserFactory";
 
 function* loginEffect({ payload }) {
-  console.log("payload:", payload);
+  try {
+    const { data } = yield call(httpFetch.request, loginQuery, payload);
+    const user = buildUser(data);
 
-  const data = yield call(httpFetch.request, loginQuery, payload);
-
-  console.log("data:", data);
-  yield put(actions.loginSuccess());
+    yield put(actions.loginSuccess());
+  } catch (error) {
+    yield put(
+      actions.loginFailure({
+        data: error,
+        msg: "Could Not login",
+        hasError: true
+      })
+    );
+  }
 }
 
 function* watchLogin() {

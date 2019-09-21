@@ -6,7 +6,7 @@ import actions from "./actions";
 import actionTypes from "./actionTypes";
 import httpFetch from "../../../domain/services/httpFetch";
 import productListFactory from "../../../domain/factories/productListFactory";
-import { loadProductsQuery } from "../../../domain/repositories/productRepository";
+import { loadProductsQuery } from "../../../domain/repositories/ProductRepository";
 
 function* loadProductsEffect({ payload }) {
   

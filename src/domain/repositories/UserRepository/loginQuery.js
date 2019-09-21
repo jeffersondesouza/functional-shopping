@@ -5,5 +5,8 @@ import type { Login } from "./../../types/Login";
 export default (data: Login): HttpRequest => ({
   method: "POST",
   url: "http://localhost:3001/user/login",
-  data
+  data,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });

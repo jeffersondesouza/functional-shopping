@@ -27,11 +27,13 @@ app.use((req, res, next) => {
   const whitelist = ["localhost:3000", "localhost:3001", "localhost:3002"];
   const origin = req.headers.host;
 
-  if (whitelist.indexOf(origin) > -1) {
+/*   if (whitelist.indexOf(origin) > -1) {
     res.header("Access-Control-Allow-Origin", origin);
   } else {
     throw new Error("CORS");
-  }
+  } */
+  res.header("Access-Control-Allow-Origin", '*');
+
 
   res.header(
     "Access-Control-Allow-Headers",

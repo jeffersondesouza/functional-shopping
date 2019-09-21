@@ -1,6 +1,7 @@
 export default {
   error: { msg: "", hasError: false, data: {} },
   profile: { name: "", email: "" },
-  isLogged: 0,
+  auth: { token: "" },
+  isLogged: false,
   isLoggingIn: false
 };
