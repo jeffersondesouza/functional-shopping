@@ -1,1 +1,5 @@
-export default (state, action) => ({ ...state, isLoadingProducts: true });
+export default (state, action) => ({
+  ...state,
+  isLoadingProducts: true,
+  productList: []
+});

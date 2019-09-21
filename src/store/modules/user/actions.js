@@ -1,17 +1,22 @@
+// @flow
 import Types from "./actionTypes";
 
-const loginRequest = () => ({
-  type: Types.LOGIN_REQUEST
-});
+type LoginRequest = { email: string, password: string };
+type LoginError = { msg: string, hasError: boolean,data: any
+};
 
-const loginSuccess = payload => ({
-  type: Types.LOGIN_SUCCESS,
+const loginRequest = (payload: LoginRequest) => ({
+  type: Types.LOGIN_REQUEST,
   payload
 });
 
-const loginFailure = error => ({
+const loginSuccess = () => ({
+  type: Types.LOGIN_SUCCESS
+});
+
+const loginFailure = (payload: LoginError) => ({
   type: Types.LOGIN_FAILURE,
-  payload: error
+  payload
 });
 
 export default {

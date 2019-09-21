@@ -5,20 +5,18 @@ import { LoginForm } from "../../components";
 import actions from "./../../../store/rootActions";
 
 const LoginContainer = props => {
-  const handleLogin = data => {
-    console.log("data:", data);
-  };
-
   return (
     <>
-      <LoginForm onLogin={handleLogin} />
+      <LoginForm onLogin={props.dispatchLogin} />
     </>
   );
 };
 
 const mapStateToProps = state => state;
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  dispatchLogin: data => dispatch(actions.user.loginRequest(data))
+});
 
 export default connect(
   mapStateToProps,

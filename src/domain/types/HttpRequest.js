@@ -3,5 +3,6 @@
 export type HttpRequest = {
   url: string,
   method: string,
-  data: any
+  data?: any,
+  meta?: any,
 };

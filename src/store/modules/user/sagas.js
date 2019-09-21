@@ -5,9 +5,15 @@ import { takeEvery, put, all, call } from "redux-saga/effects";
 import actions from "./actions";
 import actionTypes from "./actionTypes";
 import httpFetch from "../../../domain/services/httpFetch";
+import { loginQuery } from "../../../domain/repositories/UserRepository";
 
 function* loginEffect({ payload }) {
-  yield put(actions.LoginSuccess());
+  console.log("payload:", payload);
+
+  const data = yield call(httpFetch.request, loginQuery, payload);
+
+  console.log("data:", data);
+  yield put(actions.loginSuccess());
 }
 
 function* watchLogin() {
