@@ -5,7 +5,7 @@ const imgLink =
   "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRFAuJKZMsVve-JO1mZcuEQ72D-X5e2DPjiNhcvcdlYXKc8nE5h-oc&usqp=CAc";
 
 const ProductDetails = props => {
-  const { id, modaltarget, onAddToChart } = props;
+  const { id, onAddToChart } = props;
 
   const [order, setOrder] = useState({ id: null, quantity: 0 });
 

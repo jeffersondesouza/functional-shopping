@@ -2,24 +2,20 @@ import INITIAL_STATE from "../state";
 
 import Type from "../actionTypes";
 
-import updateUser from "./functions/updateUser";
-import loginRequest from "./functions/loginRequest";
-import loginSuccess from "./functions/loginSuccess";
-import loginFailure from "./functions/loginFailure";
+import createOrderRequest from "./functions/createOrderRequest";
+import createOrderSuccess from "./functions/createOrderSuccess";
+import createOrderFailure from "./functions/createOrderFailure";
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case Type.UPDATE_USER:
-      return updateUser(state, action);
+    case Type.CREATE_ORDER_REQUEST:
+      return createOrderRequest(state, action);
 
-    case Type.LOGIN_REQUEST:
-      return loginRequest(state, action);
+    case Type.CREATE_ORDER_SUCCESS:
+      return createOrderSuccess(state, action);
 
-    case Type.LOGIN_SUCCESS:
-      return loginSuccess(state, action);
-
-    case Type.LOGIN_FAILURE:
-      return loginFailure((state, action));
+    case Type.CREATE_ORDER_FAILURE:
+      return createOrderFailure((state, action));
 
     default:
       return state;

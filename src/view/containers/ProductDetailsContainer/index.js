@@ -66,7 +66,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  login: data => dispatch(actions.user.loginRequest(data))
+  login: data => dispatch(actions.user.loginRequest(data)),
+  creteOrder: data => dispatch(actions.order.createOrderRequest(data))
 });
 
 export default withRouter(

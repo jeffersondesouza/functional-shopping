@@ -18,12 +18,12 @@ function* loginEffect({ payload }) {
       )(data)
     );
 
-    yield put(actions.loginSuccess());
+    yield put(actions.createOrderSuccess());
   } catch (error) {
     yield put(
-      actions.loginFailure({
+      actions.createOrderFailure({
         data: error,
-        msg: "Could Not login",
+        msg: "Could Not create order",
         hasError: true
       })
     );
