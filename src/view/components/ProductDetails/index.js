@@ -5,16 +5,16 @@ const imgLink =
   "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRFAuJKZMsVve-JO1mZcuEQ72D-X5e2DPjiNhcvcdlYXKc8nE5h-oc&usqp=CAc";
 
 const ProductDetails = props => {
-  const { id, onAddToChart } = props;
+  const { productId, onAddToChart } = props;
 
-  const [order, setOrder] = useState({ id: null, quantity: 0 });
+  const [order, setOrder] = useState({ productId: null, quantity: 0 });
 
   useEffect(() => {
     setOrder({
-      id: id,
+      productId: productId,
       quantity: 0
     });
-  }, [id]);
+  }, [productId]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -52,7 +52,7 @@ const ProductDetails = props => {
         <div className="ProductDetails__description">
           <p>description of the product</p>
         </div>
-        <form action="#" className="ChartForm">
+        <form onSubmit={handleSubmit} className="ChartForm">
           <div className="ChartForm__content">
             <div className="ChartForm__quantity">
               <input value={order.quantity} readOnly />

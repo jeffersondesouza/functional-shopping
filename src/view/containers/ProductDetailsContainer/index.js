@@ -7,7 +7,7 @@ import actions from "../../../store/rootActions";
 import selectIsLogged from "../../../store/selectors/selectIsLogged";
 
 const ProductDetailsContainer = props => {
-  const { isLoggedIn, login, addOrderSuccess } = props;
+  const { isLoggedIn, login, addOrderSuccess, createOrder } = props;
 
   const [modal, setModal] = useState(null);
   const [order, setOrder] = useState({});
@@ -22,8 +22,9 @@ const ProductDetailsContainer = props => {
   }, [M]);
 
   useEffect(() => {
-    if (isLoggedIn && order.id) {
-      console.log(order);
+    console.log('order:', order)
+    if (isLoggedIn && order.productId) {
+      createOrder(order);
     }
 
     if (isLoggedIn && modal) {
@@ -54,7 +55,7 @@ const ProductDetailsContainer = props => {
       </Modal>
 
       <ProductDetails
-        id={props.match.params.id}
+        productId={props.match.params.id}
         onAddToChart={handleAddToChart}
       />
     </>
@@ -67,7 +68,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   login: data => dispatch(actions.user.loginRequest(data)),
-  creteOrder: data => dispatch(actions.order.createOrderRequest(data))
+  createOrder: data => dispatch(actions.order.createOrderRequest(data))
 });
 
 export default withRouter(
