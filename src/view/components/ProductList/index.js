@@ -2,9 +2,7 @@ import React from "react";
 import Product from "./Product";
 
 const ProductList = ({ products }) => {
-  if (!products.length) {
-    return <div>No products registered</div>;
-  }
+  
   return (
     <ul className="row">
       {products.map(item => (

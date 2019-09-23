@@ -11,6 +11,7 @@ import pipe from "../../../utils/functions/pipe";
 
 function* loadProductsEffect({ payload }) {
   try {
+    // res = {data, status, httpStatus, meta}
     const { data } = yield call(httpFetch.request, loadProductsQuery);
 
     yield put(
