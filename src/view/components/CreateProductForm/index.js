@@ -5,7 +5,7 @@ const CreateProductForm = props => {
 
   const [formValue, setFormValue] = useState({
     name: "",
-    proze: "",
+    prize: "",
     imageUrl: ""
   });
 
@@ -13,7 +13,7 @@ const CreateProductForm = props => {
     if (createProductSuccess) {
       setFormValue({
         name: "",
-        proze: "",
+        prize: "",
         imageUrl: ""
       });
     }

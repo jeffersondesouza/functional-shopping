@@ -24,6 +24,28 @@ const reducer = (state = INITIAL_STATE, action) => {
     case Type.LOAD_PRODUCT_FAILURE:
       return loadProductsFailure(state, action);
 
+    case Type.CREATE_PRODUCT_REQUEST:
+      return {
+        ...state,
+        isCreateingProduct: true,
+        createProductSuccess: false
+      };
+
+    case Type.CREATE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        isCreateingProduct: false,
+        createProductSuccess: true
+      };
+
+    case Type.CREATE_PRODUCT_FAILURE:
+      return {
+        ...state,
+        isCreateingProduct: false,
+        createProductSuccess: false,
+        error: { ...action.payload }
+      };
+
     default:
       return state;
   }

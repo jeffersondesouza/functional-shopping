@@ -25,10 +25,28 @@ const loadProductFailure = error => ({
   payload: error
 });
 
+const createProductRequest = product => ({
+  type: Types.CREATE_PRODUCT_REQUEST,
+  payload: product
+});
+
+const createProductSuccess = payload => ({
+  type: Types.CREATE_PRODUCT_SUCCESS,
+  payload
+});
+
+const createProductFailure = error => ({
+  type: Types.CREATE_PRODUCTFAILURE,
+  payload: error
+});
+
 export default {
   loadProductRequest,
   loadProductSuccess,
   loadProductFailure,
   updateProducts,
-  updateProductsCounter
+  updateProductsCounter,
+  createProductRequest,
+  createProductSuccess,
+  createProductFailure
 };
