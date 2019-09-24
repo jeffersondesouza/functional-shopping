@@ -11,26 +11,9 @@ function* createOrderEffect({ payload }) {
   try {
     const token = yield select(selectToken);
 
-    const { data } = yield call(
-      httpFetch.request,
-      createOrderQuery,
-      token,
-      payload
-    );
+    yield call(httpFetch.request, createOrderQuery, token, payload);
 
-    console.log("data:", data); 
-    /*
-     */
-
-    /* 
-    yield put(
-      pipe(
-        buildUser,
-        actions.updateUser
-      )(data)
-    );
     yield put(actions.createOrderSuccess());
- */
   } catch (error) {
     yield put(
       actions.createOrderFailure({

@@ -27,13 +27,12 @@ app.use((req, res, next) => {
   const whitelist = ["localhost:3000", "localhost:3001", "localhost:3002"];
   const origin = req.headers.host;
 
-/*   if (whitelist.indexOf(origin) > -1) {
+  /*   if (whitelist.indexOf(origin) > -1) {
     res.header("Access-Control-Allow-Origin", origin);
   } else {
     throw new Error("CORS");
   } */
-  res.header("Access-Control-Allow-Origin", '*');
-
+  res.header("Access-Control-Allow-Origin", "*");
 
   res.header(
     "Access-Control-Allow-Headers",
@@ -41,7 +40,8 @@ app.use((req, res, next) => {
   );
 
   if (req.method === "OPTION") {
-    res.header("Access-Control-Allow-Methods", "PUT, POST, GET, PATCH, DELETE");
+    res.header("Access-Control-Allow-Methods",  "GET, POST, OPTIONS, PUT, DELETE");
+// /    res.header("Access-Control-Allow-Methods", "PUT, POST, GET, PATCH, DELETE");
     return res.status(200).json({});
   }
 
