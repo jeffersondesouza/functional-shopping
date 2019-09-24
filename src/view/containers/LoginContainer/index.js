@@ -7,9 +7,10 @@ import actions from "./../../../store/rootActions";
 import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 
 const LoginContainer = props => {
-  const { dispatchLogin, isLooged } = props;
+  const { dispatchLogin, isLoggedIn } = props;
+  console.log('props:', props)
 
-  if (isLooged) {
+  if (isLoggedIn) {
     return <Redirect to="/orders" />;
   }
 
@@ -17,7 +18,7 @@ const LoginContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  isLooged: selectIsLoggedIn(state)
+  isLoggedIn: selectIsLoggedIn(state)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,5 +1,7 @@
 export default (state, action) => ({
   ...state,
-  ...action.payload,
-  isLogged: true
+  auth: {
+    ...action.payload,
+    isLoggedIn: true
+  }
 });
