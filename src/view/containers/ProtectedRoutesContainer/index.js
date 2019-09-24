@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ProductList } from "../../components";
 
 import actions from "./../../../store/rootActions";
 import selectToken from "../../../store/selectors/selectToken";
@@ -8,9 +7,6 @@ import Maybe from "../../../utils/functors/Maybe";
 import selectIsValidatingToken from "../../../store/selectors/selectIsValidatingToken";
 
 export class ProtectedRoutesContainer extends Component {
-  state = {
-    token: 123
-  };
 
   onUnload = event => {
     if (Maybe.of(this.props.token).get()) {
@@ -20,7 +16,6 @@ export class ProtectedRoutesContainer extends Component {
 
   componentDidMount() {
     const token = window.localStorage.getItem("token");
-    console.log("token:", token);
     if (token) {
       this.props.validateToken(token);
       window.localStorage.removeItem("token");

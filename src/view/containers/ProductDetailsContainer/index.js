@@ -22,7 +22,6 @@ const ProductDetailsContainer = props => {
   }, [M]);
 
   useEffect(() => {
-    console.log('order:', order)
     if (isLoggedIn && order.productId) {
       createOrder(order);
     }

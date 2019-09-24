@@ -47,8 +47,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case Type.UPDATE_TOKEN:
       return {
         ...state,
-        isLogged: true,
-        auth: { ...state.auth, token: action.payload, isLogged: true }
+        auth: { ...state.auth, token: action.payload.token, isLoggedIn: action.payload.isLoggedIn }
       };
 
     default:

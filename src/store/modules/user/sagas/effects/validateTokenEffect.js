@@ -14,7 +14,7 @@ function* loginEffect({ payload }) {
     );
     if (httpStatus === 200) {
       yield put(actions.validateTokenSuccess());
-      yield put(actions.updateToken(payload));
+      yield put(actions.updateAuth({ token: payload, isLoggedIn: true }));
     }
   } catch (error) {
     yield put(

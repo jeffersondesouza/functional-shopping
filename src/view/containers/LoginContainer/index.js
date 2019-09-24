@@ -8,7 +8,6 @@ import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 
 const LoginContainer = props => {
   const { dispatchLogin, isLoggedIn } = props;
-  console.log('props:', props)
 
   if (isLoggedIn) {
     return <Redirect to="/orders" />;

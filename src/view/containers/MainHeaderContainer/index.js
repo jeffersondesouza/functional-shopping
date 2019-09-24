@@ -8,7 +8,6 @@ import selectTotalProducts from "../../../store/selectors/selectTotalProducts";
 
 const MainHeaderContainer = props => {
   const { isLoggedIn, totalProducts, logout } = props;
-  console.log('isLoggedIn:', isLoggedIn)
   return (
     <>
       <MainNavBar

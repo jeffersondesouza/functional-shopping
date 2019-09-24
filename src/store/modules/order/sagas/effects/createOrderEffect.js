@@ -8,7 +8,6 @@ import selectToken from "../../../../selectors/selectToken";
 import actions from "../../actions";
 
 function* createOrderEffect({ payload }) {
-  console.log("payload:", payload);
   try {
     const token = yield select(selectToken);
 
@@ -19,11 +18,10 @@ function* createOrderEffect({ payload }) {
       payload
     );
 
-    console.log("data:", data);
+    console.log("data:", data); 
     /*
      */
 
-    // console.log("data:", data);
     /* 
     yield put(
       pipe(

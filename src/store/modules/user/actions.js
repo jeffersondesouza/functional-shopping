@@ -64,7 +64,7 @@ const validateTokenFailure = (payload: LoginError) => ({
   payload
 });
 
-const updateToken = (token: string) => ({
+const updateAuth = (token: string) => ({
   type: Types.UPDATE_TOKEN,
   payload: token
 });
@@ -83,5 +83,5 @@ export default {
   validateTokenRequest,
   validateTokenSuccess,
   validateTokenFailure,
-  updateToken
+  updateAuth
 };

@@ -1,7 +1,9 @@
-export default (state, action) => ({
-  ...state,
-  auth: {
+export default (state, action) => {
+  const auth = { ...action.payload.auth, isLoggedIn: true };
+
+  return {
+    ...state,
     ...action.payload,
-    isLoggedIn: true
-  }
-});
+    auth
+  };
+};

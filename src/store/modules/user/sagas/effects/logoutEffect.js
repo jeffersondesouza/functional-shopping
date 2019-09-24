@@ -5,7 +5,7 @@ import actions from "../../actions";
 function* logoutEffect({ payload }) {
   try {
     yield put(actions.logoutSuccess());
-    yield put(actions.updateToken(''));
+    yield put(actions.updateAuth({ token: payload, isLoggedIn: false }));
   } catch (error) {
     yield put(
       actions.logoutFailure({
