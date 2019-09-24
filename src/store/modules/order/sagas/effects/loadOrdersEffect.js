@@ -1,6 +1,5 @@
 import { put, call, select } from "redux-saga/effects";
 
-
 import pipe from "../../../../../utils/functions/pipe";
 import httpFetch from "../../../../../domain/services/httpFetch";
 import { loadOrdersQuery } from "../../../../../domain/repositories/OrderRepository";
@@ -14,8 +13,6 @@ function* loadOrdersEffect() {
 
     const { data } = yield call(httpFetch.request, loadOrdersQuery, token);
 
-    console.log("data:", data);
-
     yield put(actions.loadOrdersSuccess());
 
     yield put(
@@ -25,7 +22,7 @@ function* loadOrdersEffect() {
       )(data.orders)
     );
   } catch (error) {
-    console.log('error:', error)
+    console.log("error:", error);
     yield put(
       actions.loadOrdersFailure({
         data: error,
