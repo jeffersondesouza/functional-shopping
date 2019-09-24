@@ -5,7 +5,7 @@ const imgLink =
   "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRFAuJKZMsVve-JO1mZcuEQ72D-X5e2DPjiNhcvcdlYXKc8nE5h-oc&usqp=CAc";
 
 const ProductDetails = props => {
-  const { productId, onAddToChart } = props;
+  const { productId, onAddToChart, createOrderSuccess } = props;
 
   const [order, setOrder] = useState({ productId: null, quantity: 0 });
 
@@ -15,6 +15,13 @@ const ProductDetails = props => {
       quantity: 0
     });
   }, [productId]);
+
+  useEffect(() => {
+    if (createOrderSuccess && order.quantity > 0) {
+      setOrder({ ...order, quantity: 0 });
+      alert("Produto adicionado com sucesso!");
+    }
+  }, [createOrderSuccess, order]);
 
   const handleSubmit = e => {
     e.preventDefault();

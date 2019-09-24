@@ -5,9 +5,16 @@ import { Modal, ProductDetails, LoginForm } from "../../components";
 
 import actions from "../../../store/rootActions";
 import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
+import selectCreateOrderSuccess from "../../../store/selectors/selectCreateOrderSuccess";
 
 const ProductDetailsContainer = props => {
-  const { isLoggedIn, login, addOrderSuccess, createOrder } = props;
+  const {
+    isLoggedIn,
+    login,
+    addOrderSuccess,
+    createOrder,
+    createOrderSuccess
+  } = props;
 
   const [modal, setModal] = useState(null);
   const [order, setOrder] = useState({});
@@ -54,6 +61,7 @@ const ProductDetailsContainer = props => {
       </Modal>
 
       <ProductDetails
+        createOrderSuccess={createOrderSuccess}
         productId={props.match.params.id}
         onAddToChart={handleAddToChart}
       />
@@ -62,7 +70,8 @@ const ProductDetailsContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  isLoggedIn: selectIsLoggedIn(state)
+  isLoggedIn: selectIsLoggedIn(state),
+  createOrderSuccess: selectCreateOrderSuccess(state)
 });
 
 const mapDispatchToProps = dispatch => ({
