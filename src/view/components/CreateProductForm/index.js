@@ -5,19 +5,20 @@ const CreateProductForm = props => {
 
   const [formValue, setFormValue] = useState({
     name: "",
-    prize: "",
+    price: "",
     imageUrl: ""
   });
 
   useEffect(() => {
-    if (createProductSuccess) {
+    if (createProductSuccess && formValue.name) {
       setFormValue({
         name: "",
-        prize: "",
+        price: "",
         imageUrl: ""
       });
+      alert("Produto criado com sucesso");
     }
-  }, [createProductSuccess]);
+  }, [createProductSuccess, formValue]);
 
   const handleInputChange = ({ target }) => {
     const name = target.name;
@@ -39,6 +40,7 @@ const CreateProductForm = props => {
             id="name"
             name="name"
             type="text"
+            value={formValue.name}
             onChange={handleInputChange}
           />
           <label htmlFor="name">Name</label>
@@ -47,12 +49,13 @@ const CreateProductForm = props => {
       <div className="row">
         <div className="input-field col s12">
           <input
-            id="prize"
-            name="prize"
+            id="price"
+            name="price"
             type="number"
+            value={formValue.price}
             onChange={handleInputChange}
           />
-          <label htmlFor="prize">Prize</label>
+          <label htmlFor="price">price</label>
         </div>
       </div>
 
