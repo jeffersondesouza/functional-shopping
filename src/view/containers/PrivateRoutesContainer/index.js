@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 
 import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 
-const PrivateRoutesContainer = ({ children, isLoggedIn }) => {
+const PrivateRoutesContainer = props => {
+  const { children, isLoggedIn } = props;
+
   if (!isLoggedIn) {
     return <Redirect to="/login" />;
   }

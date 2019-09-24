@@ -5,14 +5,18 @@ import { CreateProductForm } from "../../components";
 import actions from "../../../store/rootActions";
 
 const CreateProductContainer = props => {
+  const { createProductSuccess } = props;
+
   return (
     <>
-      <CreateProductForm />
+      <CreateProductForm createProductSuccess={createProductSuccess} />
     </>
   );
 };
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({
+  createProductSuccess: state.product.createProductSuccess
+});
 
 const mapDispatchToProps = dispatch => ({});
 

@@ -29,6 +29,7 @@ export class ProtectedRoutesContainer extends Component {
 
   render() {
     const { children, isValidatingToken } = this.props;
+    console.log('isValidatingToken Prot:', isValidatingToken)
 
     if (isValidatingToken) {
       return <div>Loadding</div>;
