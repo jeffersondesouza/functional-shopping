@@ -50,6 +50,25 @@ const signUpFailure = (payload: LoginError) => ({
   payload
 });
 
+const validateTokenRequest = (token: string) => ({
+  type: Types.VALIDATE_TOKEN_REQUEST,
+  payload: token
+});
+
+const validateTokenSuccess = () => ({
+  type: Types.VALIDATE_TOKEN_SUCCESS
+});
+
+const validateTokenFailure = (payload: LoginError) => ({
+  type: Types.VALIDATE_TOKEN_FAILURE,
+  payload
+});
+
+const updateToken = (token: string) => ({
+  type: Types.UPDATE_TOKEN,
+  payload: token
+});
+
 export default {
   updateUser,
   loginRequest,
@@ -60,5 +79,9 @@ export default {
   logoutFailure,
   signUpRequest,
   signUpSuccess,
-  signUpFailure
+  signUpFailure,
+  validateTokenRequest,
+  validateTokenSuccess,
+  validateTokenFailure,
+  updateToken
 };

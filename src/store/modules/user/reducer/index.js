@@ -35,6 +35,22 @@ const reducer = (state = INITIAL_STATE, action) => {
     case Type.SIGN_UP_FAILURE:
       return signUpFailure((state, action));
 
+    case Type.VALIDATE_TOKEN_REQUEST:
+      return { ...state, isValidatingToken: true };
+
+    case Type.VALIDATE_TOKEN_SUCCESS:
+      return { ...state, isValidatingToken: false };
+
+    case Type.VALIDATE_TOKEN_FAILURE:
+      return { ...state, isValidatingToken: false };
+
+    case Type.UPDATE_TOKEN:
+      return {
+        ...state,
+        isLogged: true,
+        auth: { ...state.auth, token: action.payload, isLogged: true }
+      };
+
     default:
       return state;
   }

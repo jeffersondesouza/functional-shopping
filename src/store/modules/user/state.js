@@ -4,5 +4,6 @@ export default {
   auth: { token: "" },
   isLogged: false,
   isLoggingIn: false,
-  isSigningUp: false
+  isSigningUp: false,
+  isValidatingToken: false
 };
