@@ -16,26 +16,31 @@ const createOrderSuccess = () => ({
 const createOrderFailure = (payload: LoginError) => ({
   type: Types.CREATE_ORDER_FAILURE,
   payload
-});/* 
-
-const logoutRequest = () => ({
-  type: Types.LOGOUT_REQUEST
 });
 
-const logoutSuccess = () => ({
-  type: Types.LOGOUT_SUCCESS
+const loadOrdersRequest = () => ({
+  type: Types.LOAD_ORDERS_REQUEST
 });
 
-const logoutFailure = (payload: LoginError) => ({
-  type: Types.LOGOUT_FAILURE,
+const loadOrdersSuccess = (orders: any[]) => ({
+  type: Types.LOAD_ORDERS_SUCCESS
+});
+
+const loadOrdersFailure = (payload: LoginError) => ({
+  type: Types.LOAD_ORDERS_FAILURE,
   payload
 });
- */
+
+const updateOrders = (orders: any[]) => ({
+  type: Types.UPDATE_ORDERS
+});
+
 export default {
   createOrderRequest,
   createOrderSuccess,
   createOrderFailure,
- /*  logoutRequest,
-  logoutSuccess,
-  logoutFailure */
+  loadOrdersRequest,
+  loadOrdersSuccess,
+  loadOrdersFailure,
+  updateOrders
 };
