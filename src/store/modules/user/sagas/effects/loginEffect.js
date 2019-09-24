@@ -4,8 +4,8 @@ import actions from "../../actions";
 
 import pipe from "../../../../../utils/functions/pipe";
 import httpFetch from "../../../../../domain/services/httpFetch";
-import { loginQuery } from "../../../../../domain/repositories/UserRepository";
-import { buildUser } from "../../../../../domain/factories/UserFactory";
+import { loginQuery } from "../../../../../domain/modules/User/UserRepository";
+import { buildUser } from "../../../../../domain/modules/User/UserFactory";
 
 function* loginEffect({ payload }) {
   try {

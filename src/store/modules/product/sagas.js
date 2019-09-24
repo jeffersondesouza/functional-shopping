@@ -2,11 +2,11 @@
 import { takeEvery, put, all, call, select } from "redux-saga/effects";
 
 import httpFetch from "../../../domain/services/httpFetch";
-import ProductFactory from "../../../domain/factories/ProductFactory";
+import ProductFactory from "../../../domain/modules/Product/ProductFactory";
 import {
   createProductsQuery,
   loadProductsQuery
-} from "../../../domain/repositories/ProductRepository";
+} from "../../../domain/modules/Product/ProductRepository";
 import pipe from "../../../utils/functions/pipe";
 import selectToken from "../../selectors/selectToken";
 import actions from "./actions";
@@ -21,7 +21,7 @@ function* createProductEffect({ payload }) {
     yield put(actions.createProductSuccess());
     yield put(actions.loadProductRequest());
   } catch (error) {
-    console.log('error:', error)
+    console.log("error:", error);
     yield put(
       actions.createProductFailure({
         msg: "Não foi possível Criar  o produto",

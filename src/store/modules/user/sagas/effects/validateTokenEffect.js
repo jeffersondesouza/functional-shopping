@@ -3,7 +3,7 @@ import { put, call } from "redux-saga/effects";
 import actions from "../../actions";
 
 import httpFetch from "../../../../../domain/services/httpFetch";
-import { validateTokenQuery } from "../../../../../domain/repositories/UserRepository";
+import { validateTokenQuery } from "../../../../../domain/modules/User/UserRepository";
 
 function* loginEffect({ payload }) {
   try {

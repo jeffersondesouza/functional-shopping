@@ -2,7 +2,7 @@ import { put, call, select } from "redux-saga/effects";
 
 import pipe from "../../../../../utils/functions/pipe";
 import httpFetch from "../../../../../domain/services/httpFetch";
-import { createOrderQuery } from "../../../../../domain/repositories/OrderRepository";
+import { createOrderQuery } from "../../../../../domain/modules/Order/OrderRepository";
 import selectToken from "../../../../selectors/selectToken";
 
 import actions from "../../actions";

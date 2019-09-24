@@ -1,7 +1,7 @@
 import { put, call, select } from "redux-saga/effects";
 
 import httpFetch from "../../../../../domain/services/httpFetch";
-import { deleteOrderQuery } from "../../../../../domain/repositories/OrderRepository";
+import { deleteOrderQuery } from "../../../../../domain/modules/Order/OrderRepository";
 import selectToken from "../../../../selectors/selectToken";
 
 import actions from "../../actions";
