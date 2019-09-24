@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { SignUpForm } from "../../components";
 
 import actions from "../../../store/rootActions";
-import selectIsLogged from "../../../store/selectors/selectIsLogged";
+import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 
 const SignUpContainer = props => {
   const { signUp, isLooged } = props;
@@ -21,7 +21,7 @@ const SignUpContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  isLooged: selectIsLogged(state)
+  isLooged: selectIsLoggedIn(state)
 });
 
 const mapDispatchToProps = dispatch => ({

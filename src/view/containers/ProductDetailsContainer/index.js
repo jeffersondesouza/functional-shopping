@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Modal, ProductDetails, LoginForm } from "../../components";
 
 import actions from "../../../store/rootActions";
-import selectIsLogged from "../../../store/selectors/selectIsLogged";
+import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 
 const ProductDetailsContainer = props => {
   const { isLoggedIn, login, addOrderSuccess, createOrder } = props;
@@ -63,7 +63,7 @@ const ProductDetailsContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  isLoggedIn: selectIsLogged(state)
+  isLoggedIn: selectIsLoggedIn(state)
 });
 
 const mapDispatchToProps = dispatch => ({

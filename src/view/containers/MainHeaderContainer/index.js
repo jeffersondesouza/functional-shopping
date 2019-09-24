@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { MainNavBar } from "../../components";
 
 import actions from "../../../store/rootActions";
-import selectIsLogged from "../../../store/selectors/selectIsLogged";
+import selectIsLoggedIn from "../../../store/selectors/selectIsLoggedIn";
 import selectTotalProducts from "../../../store/selectors/selectTotalProducts";
 
 const MainHeaderContainer = props => {
@@ -21,7 +21,7 @@ const MainHeaderContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  isLoggedIn: selectIsLogged(state),
+  isLoggedIn: selectIsLoggedIn(state),
   totalProducts: selectTotalProducts(state)
 });
 

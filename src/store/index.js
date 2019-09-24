@@ -25,11 +25,3 @@ const configureStore = () => {
 };
 
 export default configureStore;
-
-/* 
-
-  product: {productList, selectedProduct}  
-  order: {orderList, buyingOrder, deleteingOrder}  
-  user: {profile, token, isLoggedIn, isLoggingIn, isLoggingOut}  
-
-*/
