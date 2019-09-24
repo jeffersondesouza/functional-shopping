@@ -44,7 +44,7 @@ const ProductDetailsContainer = props => {
 
   const handleAddToChart = newOrder => {
     setOrder(newOrder);
-    if (!isLoggedIn) {
+    if (!isLoggedIn && modal) {
       modal.open();
     }
   };
