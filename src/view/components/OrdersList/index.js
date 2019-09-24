@@ -1,20 +1,13 @@
 import React from "react";
 import OrdersItem from "./OrdersItem";
 
-const OrdersList = () => (
+const OrdersList = ({ orders }) => (
   <ul className="collection">
-    <li className="collection-item">
-      <OrdersItem />
-    </li>
-    <li className="collection-item">
-      <OrdersItem />
-    </li>
-    <li className="collection-item">
-      <OrdersItem />
-    </li>
-    <li className="collection-item">
-      <OrdersItem />
-    </li>
+    {orders.map(order => (
+      <li key={order.id} className="collection-item">
+        <OrdersItem {...order} />
+      </li>
+    ))}
   </ul>
 );
 

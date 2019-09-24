@@ -25,8 +25,9 @@ function* loadOrdersEffect() {
       )(data.orders)
     );
   } catch (error) {
+    console.log('error:', error)
     yield put(
-      actions.validateTokenFailure({
+      actions.loadOrdersFailure({
         data: error,
         msg: "Could Not login",
         hasError: true

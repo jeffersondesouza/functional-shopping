@@ -1,5 +1,6 @@
 export default {
   error: { msg: "", hasError: false, data: {} },
   orderList: [],
-  isCreatingOrder: false,
+  totalOrders: 0,
+  isCreatingOrder: false
 };

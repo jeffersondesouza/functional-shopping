@@ -1,12 +1,14 @@
 import React from "react";
 import "./styles.scss";
 
-const OrdersItem = () => {
+const OrdersItem = props => {
+  const { product, quantity } = props;
+
   return (
     <div className="OrdersItem">
       <div className="OrdersItem__summary">
-        <div>Name</div>
-        <div className="blue-grey-text darken-4">Quantity: 10</div>
+        <div>{product.name}</div>
+        <div className="blue-grey-text darken-4">Quantity: {quantity}</div>
       </div>
       <div className="OrdersItem__action">
         <button className="btn green darken-1 OrdersItem__buy">Buy</button>

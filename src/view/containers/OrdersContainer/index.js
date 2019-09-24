@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { OrdersList } from "../../components";
 
 import actions from "../../../store/rootActions";
+import selectOrders from "../../../store/selectors/selectOrders";
 
 const OrdersContainer = props => {
-  const { loadOrders } = props;
+  const { loadOrders, orders } = props;
 
   useEffect(() => {
     loadOrders();
@@ -13,12 +14,12 @@ const OrdersContainer = props => {
 
   return (
     <>
-      <OrdersList />
+      <OrdersList orders={orders} />
     </>
   );
 };
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({ orders: selectOrders(state) });
 
 const mapDispatchToProps = dispatch => ({
   loadOrders: () => dispatch(actions.order.loadOrdersRequest())
