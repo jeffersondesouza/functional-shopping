@@ -31,6 +31,34 @@ const loadOrdersFailure = (payload: LoginError) => ({
   payload
 });
 
+const deleteOrdersRequest = (orderId: number) => ({
+  type: Types.DELETE_ORDER_REQUEST,
+  payload: orderId
+});
+
+const deleteOrdersSuccess = () => ({
+  type: Types.DELETE_ORDER_SUCCESS
+});
+
+const deleteOrdersFailure = (payload: LoginError) => ({
+  type: Types.DELETE_ORDER_FAILURE,
+  payload
+});
+
+const buyOrderRequest = (orderId: number) => ({
+  type: Types.BUY_ORDER_REQUEST,
+  payload: orderId
+});
+
+const buyOrderSuccess = () => ({
+  type: Types.BUY_ORDER_SUCCESS
+});
+
+const buyOrderFailure = (payload: LoginError) => ({
+  type: Types.BUY_ORDER_FAILURE,
+  payload
+});
+
 const updateOrders = (orders: any[]) => ({
   type: Types.UPDATE_ORDERS,
   payload: orders
@@ -43,5 +71,11 @@ export default {
   loadOrdersRequest,
   loadOrdersSuccess,
   loadOrdersFailure,
-  updateOrders
+  updateOrders,
+  deleteOrdersRequest,
+  deleteOrdersSuccess,
+  deleteOrdersFailure,
+  buyOrderRequest,
+  buyOrderSuccess,
+  buyOrderFailure
 };

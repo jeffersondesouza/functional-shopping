@@ -6,7 +6,7 @@ import actions from "../../../store/rootActions";
 import selectOrders from "../../../store/selectors/selectOrders";
 
 const OrdersContainer = props => {
-  const { loadOrders, orders } = props;
+  const { loadOrders, orders, buyOrder, deleteOrder } = props;
 
   useEffect(() => {
     loadOrders();
@@ -14,7 +14,7 @@ const OrdersContainer = props => {
 
   return (
     <>
-      <OrdersList orders={orders} />
+      <OrdersList orders={orders} onBuy={buyOrder} onDelete={deleteOrder} />
     </>
   );
 };
@@ -22,7 +22,9 @@ const OrdersContainer = props => {
 const mapStateToProps = state => ({ orders: selectOrders(state) });
 
 const mapDispatchToProps = dispatch => ({
-  loadOrders: () => dispatch(actions.order.loadOrdersRequest())
+  loadOrders: () => dispatch(actions.order.loadOrdersRequest()),
+  buyOrder: id => dispatch(actions.order.buyOrderRequest(id)),
+  deleteOrder: id => dispatch(actions.order.deleteOrdersRequest(id))
 });
 
 export default connect(
