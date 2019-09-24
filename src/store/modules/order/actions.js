@@ -32,7 +32,8 @@ const loadOrdersFailure = (payload: LoginError) => ({
 });
 
 const updateOrders = (orders: any[]) => ({
-  type: Types.UPDATE_ORDERS
+  type: Types.UPDATE_ORDERS,
+  payload: orders
 });
 
 export default {
