@@ -1,23 +1,9 @@
 import React from "react";
-import OrdersItem from "./OrdersItem";
+
+import { OrdersContainer } from "../../containers";
 
 const Orders = () => {
-  return (
-    <ul className="collection">
-      <li className="collection-item">
-        <OrdersItem />
-      </li>
-      <li className="collection-item">
-        <OrdersItem />
-      </li>
-      <li className="collection-item">
-        <OrdersItem />
-      </li>
-      <li className="collection-item">
-        <OrdersItem />
-      </li>
-    </ul>
-  );
+  return <OrdersContainer />;
 };
 
 export default Orders;

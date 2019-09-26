@@ -16,3 +16,17 @@ body {
 .active-link {
   background: #4527A0;
 }
+
+.btn-empty {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+  }
+}

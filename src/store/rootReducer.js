@@ -1,9 +1,13 @@
 import { combineReducers } from "redux";
 
-import beersReducer from "./modules/beers/reducer";
+import productReducer from "./modules/product/reducer";
+import userReducer from "./modules/user/reducer";
+import orderReducer from "./modules/order/reducer";
 
 const appReducer = combineReducers({
-  beers: beersReducer
+  product: productReducer,
+  user: userReducer,
+  order: orderReducer
 });
 
 const rootReducer = (state, action) => {

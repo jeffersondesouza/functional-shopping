@@ -3,24 +3,27 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./styles.scss";
 
-const MainNavBar = ({ isLoggedIn }) => {
+const MainNavBar = props => {
+  const { totalProducts, isLoggedIn, onLogout } = props;
+
   return (
     <header>
-      <nav>
+      <nav className="MainNavBar">
         <div className="nav-wrapper deep-purple MainNavBar__nav-wrapper">
           <Link to="/products" className="brand-logo">
             <h1 className="MainNavBar__title-wrap">
-              
               <div className="MainNavBar__title">Budega</div>
               <div className="MainNavBar__subtitle">Functional</div>
             </h1>
           </Link>
           <ul className="right hide-on-med-and-down">
-            <li>
+            <li className="MainNavLinks__item">
+              <div className="MainNavLinks__item-count">{totalProducts}</div>
               <NavLink activeClassName="active-link" to="/products">
                 Products
               </NavLink>
             </li>
+
             {isLoggedIn ? (
               <>
                 <li>
@@ -34,9 +37,10 @@ const MainNavBar = ({ isLoggedIn }) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink activeClassName="active-link" to="/login">
+                  <button className="btn-empty" onClick={onLogout}>
                     Logout
-                  </NavLink>
+                    <i className="material-icons right">exit_to_app</i>
+                  </button>
                 </li>
               </>
             ) : (
