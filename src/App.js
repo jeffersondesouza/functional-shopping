@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 /* import {
   CreateProduct,
@@ -15,10 +16,10 @@ import { Switch, Route } from "react-router-dom";
 import TokenKeeperProvider from "./view/containers/TokenKeeperProvider";
 import MainHeaderContainer from "./view/containers/MainHeaderContainer";
  */
- const PrivateRoutesContainer = React.lazy(() =>
+const PrivateRoutesContainer = React.lazy(() =>
   import("./view/containers/PrivateRoutesContainer")
-); 
- const TokenKeeperProvider = React.lazy(() =>
+);
+const TokenKeeperProvider = React.lazy(() =>
   import("./view/containers/TokenKeeperProvider")
 );
 const MainHeaderContainer = React.lazy(() =>
@@ -42,28 +43,30 @@ const App = () => {
             return (
               <>
                 <div>{JSON.stringify(params)}</div>
-                <MainHeaderContainer />
-                <div className="container App__container">
-                  <Switch>
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/signup" component={SignUp} />
-                    <Route exact path="/products" component={Products} />
-                    <Route
-                      exact
-                      path="/products/:id"
-                      component={ProductDetails}
-                    />
-                    <PrivateRoutesContainer storedToken={storedToken}>
+                <Router>
+                  <MainHeaderContainer />
+                  <div className="container App__container">
+                    <Switch>
+                      <Route exact path="/login" component={Login} />
+                      <Route exact path="/signup" component={SignUp} />
+                      <Route exact path="/products" component={Products} />
                       <Route
                         exact
-                        path="/create-product"
-                        component={CreateProduct}
+                        path="/products/:id"
+                        component={ProductDetails}
                       />
-                      <Route exact path="/orders" component={Orders} />
-                    </PrivateRoutesContainer>
-                    <Route path="*" component={Products} />
-                  </Switch>
-                </div>
+                      <PrivateRoutesContainer storedToken={storedToken}>
+                        <Route
+                          exact
+                          path="/create-product"
+                          component={CreateProduct}
+                        />
+                        <Route exact path="/orders" component={Orders} />
+                      </PrivateRoutesContainer>
+                      <Route path="*" component={Products} />
+                    </Switch>
+                  </div>
+                </Router>
               </>
             );
           }}
