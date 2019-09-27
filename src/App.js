@@ -43,7 +43,7 @@ const App = () => {
             return (
               <>
                 <div>{JSON.stringify(params)}</div>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                   <MainHeaderContainer />
                   <div className="container App__container">
                     <Switch>
