@@ -4,13 +4,22 @@ import { OrdersList } from "../../components";
 
 import actions from "../../../store/rootActions";
 import selectOrders from "../../../store/selectors/selectOrders";
+import selectLoadingOrders from "../../../store/selectors/selectLoadingOrders";
 
 const OrdersContainer = props => {
-  const { loadOrders, orders, buyOrder, deleteOrder } = props;
+  const { loadOrders, orders, buyOrder, deleteOrder, isLoadingOrders } = props;
 
   useEffect(() => {
     loadOrders();
   }, [loadOrders]);
+
+  if (isLoadingOrders) {
+    return <div>Loading Orders...</div>;
+  }
+
+  if (!orders.length) {
+    return <div>NO orders</div>;
+  }
 
   return (
     <>
@@ -19,7 +28,10 @@ const OrdersContainer = props => {
   );
 };
 
-const mapStateToProps = state => ({ orders: selectOrders(state) });
+const mapStateToProps = state => ({
+  orders: selectOrders(state),
+  isLoadingOrders: selectLoadingOrders(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   loadOrders: () => dispatch(actions.order.loadOrdersRequest()),

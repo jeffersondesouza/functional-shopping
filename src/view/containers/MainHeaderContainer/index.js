@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { MainNavBar } from "../../components";
 
@@ -8,6 +8,10 @@ import selectTotalProducts from "../../../store/selectors/selectTotalProducts";
 
 const MainHeaderContainer = props => {
   const { isLoggedIn, totalProducts, logout } = props;
+  useEffect(() => {
+    console.log("MainHeaderContainer");
+  }, []);
+
   return (
     <>
       <MainNavBar

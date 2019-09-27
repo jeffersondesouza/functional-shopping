@@ -39,15 +39,27 @@ const reducer = (state = INITIAL_STATE, action) => {
       return { ...state, isValidatingToken: true };
 
     case Type.VALIDATE_TOKEN_SUCCESS:
-      return { ...state, isValidatingToken: false };
+      return { ...state, isValidatingToken: false, isLoggedIn: true };
 
     case Type.VALIDATE_TOKEN_FAILURE:
-      return { ...state, isValidatingToken: false };
+      return { ...state, isValidatingToken: false, isLoggedIn: false };
 
+    case Type.UPDATE_AUTH:
+      return {
+        ...state,
+        auth: {
+          ...state.auth,
+          token: action.payload.token,
+          isLoggedIn: action.payload.isLoggedIn
+        }
+      };
     case Type.UPDATE_TOKEN:
       return {
         ...state,
-        auth: { ...state.auth, token: action.payload.token, isLoggedIn: action.payload.isLoggedIn }
+        auth: {
+          ...state.auth,
+          token: action.payload
+        }
       };
 
     default:

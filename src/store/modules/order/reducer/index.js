@@ -21,6 +21,11 @@ const reducer = (state = INITIAL_STATE, action) => {
     case Type.UPDATE_ORDERS:
       return updateOrders(state, action);
 
+    case Type.LOAD_ORDERS_REQUEST:
+      return { ...state, isLoadingOrders: true };
+    case Type.LOAD_ORDERS_SUCCESS:
+      return { ...state, isLoadingOrders: false };
+
     default:
       return state;
   }

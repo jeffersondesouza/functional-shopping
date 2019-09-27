@@ -6,6 +6,7 @@ function* logoutEffect({ payload }) {
   try {
     yield put(actions.logoutSuccess());
     yield put(actions.updateAuth({ token: payload, isLoggedIn: false }));
+    window.localStorage.removeItem("token");
   } catch (error) {
     yield put(
       actions.logoutFailure({
