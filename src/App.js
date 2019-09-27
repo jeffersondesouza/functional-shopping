@@ -1,15 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-
-import {
-  CreateProduct,
-  Login,
-  SignUp,
-  Orders,
-  ProductDetails,
-  Products
-} from "./view/pages";
-
 
 import {
   MainHeaderContainer
@@ -18,6 +8,23 @@ import {
 import PrivateRoutesContainer from "./view/containers/PrivateRoutesContainer";
 import TokenKeeperProvider from "./view/containers/TokenKeeperProvider";
 
+/* import {
+  CreateProduct,
+  Login,
+  SignUp,
+  Orders,
+  ProductDetails,
+  Products
+} from "./view/pages";
+ */
+
+const CreateProduct = React.lazy(() => import("./view/pages/CreateProduct"));
+const Login = React.lazy(() => import("./view/pages/Login"));
+const SignUp = React.lazy(() => import("./view/pages/SignUp"));
+const Orders = React.lazy(() => import("./view/pages/Orders"));
+const ProductDetails = React.lazy(() => import("./view/pages/ProductDetails"));
+const Products = React.lazy(() => import("./view/pages/Products"));
+
 const App = () => {
   return (
     <div className="App">
@@ -25,7 +32,7 @@ const App = () => {
         {params => {
           const { storedToken } = params;
           return (
-            <>
+            <Suspense fallback={<div>Loading Pages...</div>}>
               <div>{JSON.stringify(params)}</div>
               <MainHeaderContainer />
               <div className="container App__container">
@@ -49,7 +56,7 @@ const App = () => {
                   <Route path="*" component={Products} />
                 </Switch>
               </div>
-            </>
+            </Suspense>
           );
         }}
       </TokenKeeperProvider>
