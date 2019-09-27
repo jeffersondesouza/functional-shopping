@@ -36,6 +36,7 @@ const ProductDetailsContainer = props => {
     if (isLoggedIn && modal) {
       modal.close();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn, modal, order]);
 
   useEffect(() => {

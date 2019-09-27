@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Maybe from "../../../utils/functors/Maybe";
 import actions from "./../../../store/rootActions";
 import selectToken from "../../../store/selectors/selectToken";
-import Maybe from "../../../utils/functors/Maybe";
 import selectIsValidatingToken from "../../../store/selectors/selectIsValidatingToken";
 
 export class ProtectedRoutesContainer extends Component {
