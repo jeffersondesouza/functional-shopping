@@ -14,7 +14,7 @@ const OrdersContainer = props => {
   }, [loadOrders]);
 
   if (isLoadingOrders) {
-    return <div>Loading...</div>;
+    return <div>Loading Orders...</div>;
   }
 
   if (!orders.length) {

@@ -11,6 +11,7 @@ const PrivateRoutesContainer = props => {
     children,
     validateToken,
     token,
+    storedToken,
     isLoggedIn,
     isValidatingToken
   } = props;
@@ -32,19 +33,19 @@ const PrivateRoutesContainer = props => {
   }, [isLoggedIn]);
 
   useEffect(() => {
-    if (isValidatingToken) {
+    if (isValidatingToken || !storedToken) {
       setIsLoadingComponent(false);
     }
-  }, [isValidatingToken]);
+  }, [isValidatingToken, storedToken]);
 
   console.log({ 1: 1, isLoggedIn, isValidatingToken, isLoadingComponent });
 
   if (isValidatingToken || isLoadingComponent) {
-    return <div>Loading...</div>;
+    return <div>Loading 1...</div>;
   }
   console.log({ isLoggedIn, isValidatingToken });
 
-  if (!isLoggedIn && !isValidatingToken) {
+  if (!isLoggedIn) {
     return <Redirect to="/login" />;
   }
 

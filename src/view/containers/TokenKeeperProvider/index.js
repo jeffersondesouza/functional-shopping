@@ -28,7 +28,11 @@ class TokenKeeperProvider extends React.Component {
 
     if (storedToken) {
       this.props.updateToken(storedToken);
-      window.localStorage.removeItem("token");
+      /*
+        Aqui deixa o token alvo, caso queiramos podemos fazer algo para que deixe ele provisorio de acordo com o token,
+        tipo, salva Token_5_primeiros_numeros, assim,a cada login fica mais segruro
+      */
+      // window.localStorage.removeItem("token");
     }
     window.addEventListener("beforeunload", this.handleReloadPage);
 
