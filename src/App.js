@@ -1,13 +1,6 @@
 import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import {
-  MainHeaderContainer
-  // ProtectedRoutesContainer
-} from "./view/containers";
-import PrivateRoutesContainer from "./view/containers/PrivateRoutesContainer";
-import TokenKeeperProvider from "./view/containers/TokenKeeperProvider";
-
 /* import {
   CreateProduct,
   Login,
@@ -17,6 +10,20 @@ import TokenKeeperProvider from "./view/containers/TokenKeeperProvider";
   Products
 } from "./view/pages";
  */
+
+/* import PrivateRoutesContainer from "./view/containers/PrivateRoutesContainer";
+import TokenKeeperProvider from "./view/containers/TokenKeeperProvider";
+import MainHeaderContainer from "./view/containers/MainHeaderContainer";
+ */
+ const PrivateRoutesContainer = React.lazy(() =>
+  import("./view/containers/PrivateRoutesContainer")
+); 
+ const TokenKeeperProvider = React.lazy(() =>
+  import("./view/containers/TokenKeeperProvider")
+);
+const MainHeaderContainer = React.lazy(() =>
+  import("./view/containers/MainHeaderContainer")
+);
 
 const CreateProduct = React.lazy(() => import("./view/pages/CreateProduct"));
 const Login = React.lazy(() => import("./view/pages/Login"));
@@ -28,38 +35,40 @@ const Products = React.lazy(() => import("./view/pages/Products"));
 const App = () => {
   return (
     <div className="App">
-      <TokenKeeperProvider>
-        {params => {
-          const { storedToken } = params;
-          return (
-            <Suspense fallback={<div>Loading Pages...</div>}>
-              <div>{JSON.stringify(params)}</div>
-              <MainHeaderContainer />
-              <div className="container App__container">
-                <Switch>
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/signup" component={SignUp} />
-                  <Route exact path="/products" component={Products} />
-                  <Route
-                    exact
-                    path="/products/:id"
-                    component={ProductDetails}
-                  />
-                  <PrivateRoutesContainer storedToken={storedToken}>
+      <Suspense fallback={<div>Loading Pages...</div>}>
+        <TokenKeeperProvider>
+          {params => {
+            const { storedToken } = params;
+            return (
+              <>
+                <div>{JSON.stringify(params)}</div>
+                <MainHeaderContainer />
+                <div className="container App__container">
+                  <Switch>
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/signup" component={SignUp} />
+                    <Route exact path="/products" component={Products} />
                     <Route
                       exact
-                      path="/create-product"
-                      component={CreateProduct}
+                      path="/products/:id"
+                      component={ProductDetails}
                     />
-                    <Route exact path="/orders" component={Orders} />
-                  </PrivateRoutesContainer>
-                  <Route path="*" component={Products} />
-                </Switch>
-              </div>
-            </Suspense>
-          );
-        }}
-      </TokenKeeperProvider>
+                    <PrivateRoutesContainer storedToken={storedToken}>
+                      <Route
+                        exact
+                        path="/create-product"
+                        component={CreateProduct}
+                      />
+                      <Route exact path="/orders" component={Orders} />
+                    </PrivateRoutesContainer>
+                    <Route path="*" component={Products} />
+                  </Switch>
+                </div>
+              </>
+            );
+          }}
+        </TokenKeeperProvider>
+      </Suspense>
     </div>
   );
 };
